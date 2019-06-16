@@ -19,7 +19,7 @@ namespace hola_mundo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Hola Mundo");
+            MessageBox.Show("El verdadero fracaso es no intentarlo");
         }
     }
 }
