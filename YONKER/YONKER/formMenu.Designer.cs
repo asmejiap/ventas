@@ -51,8 +51,7 @@
             this.seguridadToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(426, 35);
+            this.menuStrip1.Size = new System.Drawing.Size(284, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -63,26 +62,30 @@
             this.clientesToolStripMenuItem,
             this.inventarioGeneralToolStripMenuItem});
             this.rentasToolStripMenuItem.Name = "rentasToolStripMenuItem";
-            this.rentasToolStripMenuItem.Size = new System.Drawing.Size(105, 29);
+            this.rentasToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.rentasToolStripMenuItem.Text = "Productos";
+            this.rentasToolStripMenuItem.Click += new System.EventHandler(this.RentasToolStripMenuItem_Click);
             // 
             // productosToolStripMenuItem
             // 
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            this.productosToolStripMenuItem.Size = new System.Drawing.Size(259, 30);
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.productosToolStripMenuItem.Text = "Descripcion de pieza";
+            this.productosToolStripMenuItem.Click += new System.EventHandler(this.ProductosToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(259, 30);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.clientesToolStripMenuItem.Text = "Marca Vehiculo";
+            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.ClientesToolStripMenuItem_Click);
             // 
             // inventarioGeneralToolStripMenuItem
             // 
             this.inventarioGeneralToolStripMenuItem.Name = "inventarioGeneralToolStripMenuItem";
-            this.inventarioGeneralToolStripMenuItem.Size = new System.Drawing.Size(259, 30);
+            this.inventarioGeneralToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.inventarioGeneralToolStripMenuItem.Text = "Inventario General";
+            this.inventarioGeneralToolStripMenuItem.Click += new System.EventHandler(this.InventarioGeneralToolStripMenuItem_Click);
             // 
             // reporteDePiezasToolStripMenuItem
             // 
@@ -91,25 +94,25 @@
             this.piezasEntrantesToolStripMenuItem,
             this.pedidoDePiezasToolStripMenuItem});
             this.reporteDePiezasToolStripMenuItem.Name = "reporteDePiezasToolStripMenuItem";
-            this.reporteDePiezasToolStripMenuItem.Size = new System.Drawing.Size(91, 29);
+            this.reporteDePiezasToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.reporteDePiezasToolStripMenuItem.Text = "Reporte ";
             // 
             // reporteDePizasToolStripMenuItem
             // 
             this.reporteDePizasToolStripMenuItem.Name = "reporteDePizasToolStripMenuItem";
-            this.reporteDePizasToolStripMenuItem.Size = new System.Drawing.Size(236, 30);
+            this.reporteDePizasToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.reporteDePizasToolStripMenuItem.Text = "Reporte de Piezas";
             // 
             // piezasEntrantesToolStripMenuItem
             // 
             this.piezasEntrantesToolStripMenuItem.Name = "piezasEntrantesToolStripMenuItem";
-            this.piezasEntrantesToolStripMenuItem.Size = new System.Drawing.Size(236, 30);
+            this.piezasEntrantesToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.piezasEntrantesToolStripMenuItem.Text = "Piezas Entrantes ";
             // 
             // pedidoDePiezasToolStripMenuItem
             // 
             this.pedidoDePiezasToolStripMenuItem.Name = "pedidoDePiezasToolStripMenuItem";
-            this.pedidoDePiezasToolStripMenuItem.Size = new System.Drawing.Size(236, 30);
+            this.pedidoDePiezasToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.pedidoDePiezasToolStripMenuItem.Text = "Pedido de Piezas";
             // 
             // seguridadToolStripMenuItem
@@ -117,27 +120,28 @@
             this.seguridadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.loginToolStripMenuItem});
             this.seguridadToolStripMenuItem.Name = "seguridadToolStripMenuItem";
-            this.seguridadToolStripMenuItem.Size = new System.Drawing.Size(105, 29);
+            this.seguridadToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.seguridadToolStripMenuItem.Text = "Seguridad";
             // 
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(140, 30);
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.loginToolStripMenuItem.Text = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
             // formMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(426, 402);
+            this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "formMenu";
             this.Text = "Menu Principal";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
