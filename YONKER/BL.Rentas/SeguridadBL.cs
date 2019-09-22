@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BL.Rentas
 {
-    public class SeguridadBL 
+    public class SeguridadBL
     {
         public bool Autorizar(string usuario, string contrasena)
         {
-            if( usuario == "Admin" && contrasena == "123" )
+            if (usuario == "Admin" && contrasena == "123")
             {
                 return true;
             }

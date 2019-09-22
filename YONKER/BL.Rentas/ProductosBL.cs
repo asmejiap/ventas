@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,43 +10,22 @@ namespace BL.Rentas
 {
       public  class ProductosBL
     {
+        Contexto _contexto;
         public BindingList<Producto> ListaProducto { get; set; }
 
         public ProductosBL()
 
         {
+            _contexto = new Contexto();
             ListaProducto = new BindingList<Producto>();
 
-            var producto1 = new Producto();
-            producto1.Id = 1;
-            producto1.Nombre = "Tono";
-            producto1.Precio = 1300;
-            producto1.Existencia = 5;
-            producto1.Activo = true;
-
-            ListaProducto.Add(producto1);
-
-            var producto2 = new Producto();
-            producto2.Id = 2;
-            producto2.Nombre = "Motor";
-            producto2.Precio = 5000;
-            producto2.Existencia = 3;
-            producto2.Activo = true;
-
-            ListaProducto.Add(producto2);
-
-            var producto3 = new Producto();
-            producto3.Id = 3;
-            producto3.Nombre = "Disco de frenos";
-            producto3.Precio = 800;
-            producto3.Existencia =23;
-            producto3.Activo = true;
-
-            ListaProducto.Add(producto3);
+           
         }
 
         public BindingList<Producto> ObtenerProductos()
         {
+            _contexto.Productos.Load();
+            ListaProducto = _contexto.Productos.Local.ToBindingList();
             return ListaProducto;
         }
 
@@ -57,11 +37,7 @@ namespace BL.Rentas
                 return resultado;
             }
 
-            if (producto.Id == 0)
-            {
-                producto.Id = ListaProducto.Max(item => item.Id) + 1;
-                
-            }
+            _contexto.SaveChanges();
             resultado.Exitoso = true;
             return resultado;
         }
@@ -79,6 +55,7 @@ namespace BL.Rentas
                 if (producto.Id == id)
                 {
                     ListaProducto.Remove(producto);
+                    _contexto.SaveChanges();
                     return true;
                 }
             }
@@ -90,6 +67,15 @@ namespace BL.Rentas
 
             var resultado = new Resultado();
             resultado.Exitoso = true;
+
+            if(producto == null)
+            {
+                resultado.Mensaje = "Agregue un producto valido";
+                resultado.Exitoso = false;
+
+                return resultado;
+            }
+
             if (string.IsNullOrEmpty(producto.Nombre) == true)
             {
                 resultado.Mensaje = "Ingrese una descripcion";
@@ -107,6 +93,18 @@ namespace BL.Rentas
                 resultado.Mensaje = "El precio deber ser mayor que cero";
                 resultado.Exitoso = false;
             }
+
+            if (producto.TipoId == 0)
+            {
+                resultado.Mensaje = "Seleccione un tipo";
+                resultado.Exitoso = false;
+            }
+
+            if (producto.CategoriaId == 0)
+            {
+                resultado.Mensaje = "Seleccione una categoria";
+                resultado.Exitoso = false;
+            }
             return resultado;
         }
     }
@@ -117,7 +115,18 @@ namespace BL.Rentas
         public string Nombre{ get; set; }
         public double Precio { get; set; }
         public int Existencia { get; set; }
+        public int CategoriaId { get; set; }
+        public Categoria Categoria { get; set; }
+        public int TipoId { get; set; }
+        public Tipo Tipo { get; set; }
         public bool Activo { get; set; }
+        public byte[] Foto { get; set; }
+
+        public Producto()
+        {
+            Activo = true;
+
+        }
     }
 
     public class Resultado
