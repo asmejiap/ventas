@@ -22,6 +22,7 @@ namespace YONKER
 
             var reporte = new ReporteFacturas();
             reporte.SetDataSource(bindingSource);
+            reporte.Database.Tables["Factura"].SetDataSource(bindingSource);
 
             crystalReportViewer1.ReportSource = reporte;
             crystalReportViewer1.RefreshReport();

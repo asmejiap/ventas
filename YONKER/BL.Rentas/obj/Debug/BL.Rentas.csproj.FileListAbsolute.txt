@@ -1,0 +1,10 @@
+C:\Ejercicios\YONKER\BL.Rentas\bin\Debug\BL.Rentas.dll.config
+C:\Ejercicios\YONKER\BL.Rentas\bin\Debug\BL.Rentas.dll
+C:\Ejercicios\YONKER\BL.Rentas\bin\Debug\BL.Rentas.pdb
+C:\Ejercicios\YONKER\BL.Rentas\bin\Debug\EntityFramework.dll
+C:\Ejercicios\YONKER\BL.Rentas\bin\Debug\EntityFramework.SqlServer.dll
+C:\Ejercicios\YONKER\BL.Rentas\bin\Debug\EntityFramework.xml
+C:\Ejercicios\YONKER\BL.Rentas\bin\Debug\EntityFramework.SqlServer.xml
+C:\Ejercicios\YONKER\BL.Rentas\obj\Debug\BL.Rentas.csprojResolveAssemblyReference.cache
+C:\Ejercicios\YONKER\BL.Rentas\obj\Debug\BL.Rentas.dll
+C:\Ejercicios\YONKER\BL.Rentas\obj\Debug\BL.Rentas.pdb

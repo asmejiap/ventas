@@ -17,11 +17,23 @@ namespace YONKER
         {
             InitializeComponent();
             var _productoBL = new ProductosBL();
-            var bindingSource = new BindingSource();
-            bindingSource.DataSource = _productoBL.ObtenerProductos();
+            var bindingSource1 = new BindingSource();
+            bindingSource1.DataSource = _productoBL.ObtenerProductos();
+
+            var _categoriasBL = new CategoriasBL();
+            var bindingSource2 = new BindingSource();
+            bindingSource2.DataSource = _categoriasBL.ObtenerCategorias();
+
+
+            var _tiposBL = new TiposBL();
+            var bindingSource3 = new BindingSource();
+            bindingSource3.DataSource = _tiposBL.ObtenerTipos();
+
 
             var reporte = new ReporteProductos();
-            reporte.SetDataSource(bindingSource);
+            reporte.Database.Tables["Producto"].SetDataSource(bindingSource1);
+            reporte.Database.Tables["Categoria"].SetDataSource(bindingSource2);
+            reporte.Database.Tables["Tipo"].SetDataSource(bindingSource3);
 
             crystalReportViewer1.ReportSource = reporte;
             crystalReportViewer1.RefreshReport();
